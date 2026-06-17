@@ -49,7 +49,7 @@ export const PROGRAMS: Program[] = [
   },
   {
     slug: 'cursive-writing',
-    name: 'Legible & Neat Handwriting',
+    name: 'Legible & Neat Handwriting (Cursive, Print, Lucida)',
     short: 'Neat, clear, and stylish handwriting for academic success.',
     category: 'handwriting',
     tagline: 'Neat, clear, and stylish handwriting for academic success.',
