@@ -61,45 +61,51 @@ export const TravelCard = React.forwardRef<HTMLDivElement, TravelCardProps>(
         {...props}
       >
         {/* ── Top accent band ── */}
-        <div className="px-6 pt-6 pb-4 flex items-start gap-3" style={{ background: accentPale }}>
+        <div className="px-6 pt-6 pb-5 flex items-center gap-4" style={{ background: accentPale }}>
           {icon && (
             <div
-              className="flex-shrink-0 flex items-center justify-center rounded-xl"
-              style={{ width: 48, height: 48, background: 'white', boxShadow: `0 2px 10px ${accentColor}20` }}
+              className="flex-shrink-0 flex items-center justify-center rounded-2xl"
+              style={{
+                width: 56,
+                height: 56,
+                background: 'white',
+                boxShadow: `0 4px 16px ${accentColor}22`,
+                border: `1.5px solid ${accentColor}18`,
+              }}
             >
               {icon}
             </div>
           )}
-          <div className="flex-1 min-w-0 pt-0.5">
+          <div className="flex-1 min-w-0">
             {badge && (
               <span
-                className="inline-block text-[10px] font-bold tracking-[1.5px] uppercase rounded-full px-2.5 py-1 mb-1.5"
-                style={{ color: badgeColor, background: badgeBg }}
+                className="inline-block font-display text-[10px] font-medium rounded-md px-2 py-0.5 mb-1.5"
+                style={{ color: badgeColor, background: `${badgeBg}` }}
               >
                 {badge}
               </span>
             )}
             <h3
-              className="font-extrabold text-[17px] leading-tight"
-              style={{ color: '#0F2566', fontFamily: 'Fraunces, Georgia, serif' }}
+              className="font-display font-semibold text-[17px] leading-snug"
+              style={{ color: '#0F2566' }}
             >
               {title}
             </h3>
             {subtitle && (
-              <p className="text-[12px] mt-0.5" style={{ color: `${accentColor}99` }}>{subtitle}</p>
+              <p className="font-display text-[12px] font-normal mt-0.5 leading-snug" style={{ color: `${accentColor}B0` }}>{subtitle}</p>
             )}
           </div>
         </div>
 
         {/* ── Body ── */}
         <div className={cn('px-6 flex-1', hasAlwaysButtons ? 'pb-2' : 'pb-6 relative overflow-hidden')}>
-          <p className="text-[13.5px] leading-relaxed pt-4" style={{ color: '#4A5980' }}>
+          <p className="font-display text-[13.5px] font-normal leading-relaxed pt-4 line-clamp-4" style={{ color: '#4A5980' }}>
             {overview}
           </p>
           {features.length > 0 && (
             <ul className="mt-3 flex flex-col gap-2">
               {features.map(f => (
-                <li key={f} className="flex items-center gap-2 text-[12.5px] font-medium" style={{ color: '#0F2566' }}>
+                <li key={f} className="flex items-center gap-2 font-display text-[12.5px] font-normal" style={{ color: '#0F2566' }}>
                   <svg viewBox="0 0 16 16" fill="none" width="14" height="14" aria-hidden="true" style={{ flexShrink: 0 }}>
                     <circle cx="8" cy="8" r="7" fill={accentColor} opacity=".15" />
                     <polyline points="4.5 8 7 10.5 11.5 5.5" stroke={accentColor} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
@@ -121,12 +127,11 @@ export const TravelCard = React.forwardRef<HTMLDivElement, TravelCardProps>(
               {exploreLabel && onExplore && (
                 <button
                   onClick={onExplore}
-                  className="flex-1 flex items-center justify-center gap-2 font-bold text-[13px] py-2.5 rounded-xl transition-all"
+                  className="flex-1 flex items-center justify-center gap-2 font-display font-semibold text-[13px] py-2.5 rounded-xl transition-all"
                   style={{
                     background: 'white',
                     border: `1.5px solid ${accentColor}25`,
                     color: accentColor,
-                    fontFamily: 'Fraunces, Georgia, serif',
                   }}
                   onMouseEnter={e => {
                     e.currentTarget.style.borderColor = accentColor
@@ -153,7 +158,6 @@ export const TravelCard = React.forwardRef<HTMLDivElement, TravelCardProps>(
                     background: 'white',
                     border: `1.5px solid ${accentColor}25`,
                     color: accentColor,
-                    fontFamily: 'Fraunces, Georgia, serif',
                   }}
                   onMouseEnter={e => {
                     e.currentTarget.style.borderColor = accentColor
@@ -175,8 +179,8 @@ export const TravelCard = React.forwardRef<HTMLDivElement, TravelCardProps>(
               {showBookNowAlways && onBookNow && (
                 <button
                   onClick={onBookNow}
-                  className="flex-1 flex items-center justify-center gap-2 font-bold text-[13px] py-2.5 rounded-xl text-white transition-opacity hover:opacity-90"
-                  style={{ background: accentColor, fontFamily: 'Fraunces, Georgia, serif' }}
+                  className="flex-1 flex items-center justify-center gap-2 font-display font-semibold text-[13px] py-2.5 rounded-xl text-white transition-opacity hover:opacity-90"
+                  style={{ background: accentColor }}
                 >
                   Book Now
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" width="14" height="14" aria-hidden="true">

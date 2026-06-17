@@ -54,25 +54,25 @@ export default function ContactPage() {
       <section className="py-16 px-6 lg:px-10 bg-paper">
         <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
           {/* Info */}
-          <div>
-            <h2 className="font-display font-extrabold text-2xl text-ink mb-2">We&apos;re Here to Help</h2>
-            <p className="text-muted text-sm mb-7 leading-relaxed">
+          <div className="lg:pr-6">
+            <h2 className="font-display font-semibold text-2xl text-ink mb-3 tracking-tight">We&apos;re Here to Help</h2>
+            <p className="text-muted text-sm mb-8 leading-relaxed max-w-md">
               Reach out for any questions about our handwriting and calligraphy programs, batches, or fees.
             </p>
-            <div className="flex flex-col gap-5 mb-8">
+            <div className="flex flex-col gap-6 mb-8">
               {INFO.map((item) => (
                 <div key={item.label} className="flex items-start gap-4">
-                  <div className="w-11 h-11 bg-gold-pale text-gold rounded-xl flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 bg-white text-gold rounded-2xl flex items-center justify-center flex-shrink-0 shadow-sm border border-gold-pale/50 transition-all duration-300 hover:scale-105">
                     {item.icon}
                   </div>
                   <div>
                     <div className="font-serif font-bold text-sm text-ink mb-0.5">{item.label}</div>
-                    <div className="text-muted text-sm">{item.value}</div>
+                    <div className="text-ink font-medium text-sm leading-relaxed max-w-sm">{item.value}</div>
                   </div>
                 </div>
               ))}
             </div>
-
+            
             {/* Map placeholder */}
             <div className="bg-cream border border-gold-pale rounded-2xl h-56 flex items-center justify-center relative overflow-hidden">
               <div

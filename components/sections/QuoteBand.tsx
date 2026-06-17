@@ -7,14 +7,11 @@ export default function QuoteBand() {
       <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         <FadeIn direction="left">
           <div className="flex justify-center">
-            <video
-              src="/signature-pen.mp4"
-              autoPlay
-              muted
-              loop
-              playsInline
-              aria-label="Animation of a pen signing a flowing line"
-              className="w-full max-w-[380px] h-auto rounded-2xl"
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="https://ik.imagekit.io/dypkhqxip/Novelist%20writing-bro.svg"
+              alt="Illustration of a novelist writing"
+              className="w-full max-w-[380px] h-auto"
             />
           </div>
         </FadeIn>
@@ -22,7 +19,7 @@ export default function QuoteBand() {
         <FadeIn direction="right">
           <div>
             <span className="font-script text-2xl text-gold block mb-1">a little reminder</span>
-            <h2 className="font-display font-extrabold text-3xl text-ink leading-tight mb-4">
+            <h2 className="font-display font-semibold text-[28px] text-ink leading-tight mb-4">
               Your Handwriting Is Your Signature
             </h2>
             <p className="text-muted text-[15px] leading-relaxed mb-6">

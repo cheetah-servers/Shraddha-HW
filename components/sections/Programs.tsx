@@ -21,21 +21,37 @@ function Card({ program, onOpen }: { program: Program; onOpen: (p: Program) => v
   const calli = program.category === 'calligraphy'
   return (
     <motion.button
-      whileHover={{ y: -6 }}
-      transition={{ duration: 0.2 }}
+      whileHover={{ y: -5, boxShadow: '0 12px 32px rgba(0,0,0,0.10)' }}
+      transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
       onClick={() => onOpen(program)}
-      className="text-left block w-full bg-paper border border-gold-pale rounded-2xl p-6 hover:shadow-card hover:border-gold/50 transition-all h-full cursor-pointer"
+      className="text-left flex flex-col w-full bg-paper border border-gold-pale rounded-2xl p-5 hover:border-gold/60 transition-all h-full cursor-pointer group"
     >
+      {/* Icon */}
       <div
-        className={`w-12 h-12 rounded-xl flex items-center justify-center mb-3.5 ${
+        className={`w-11 h-11 rounded-xl flex items-center justify-center mb-4 flex-shrink-0 ${
           calli ? 'bg-gold text-ink-deep' : 'bg-ink text-gold-light'
         }`}
       >
         {PROGRAM_ICONS[program.slug]}
       </div>
-      <h3 className="font-display font-bold text-[15px] text-ink mb-1.5">{program.name}</h3>
-      <p className="text-muted text-xs leading-relaxed mb-3">{program.short}</p>
-      <span className="text-[11px] font-semibold text-gold flex items-center gap-1">Learn More {ARROW}</span>
+
+      {/* Title */}
+      <h3 className="font-display font-bold text-[15px] leading-snug text-ink mb-2">
+        {program.name}
+      </h3>
+
+      {/* Divider */}
+      <span className="block w-8 h-px bg-gold/30 mb-3 flex-shrink-0" />
+
+      {/* Description – grows to fill remaining space */}
+      <p className="text-muted text-[13px] leading-relaxed flex-grow mb-4">
+        {program.short}
+      </p>
+
+      {/* CTA – always at the bottom */}
+      <span className="inline-flex items-center gap-1.5 text-[12px] font-semibold text-gold group-hover:gap-2.5 transition-all duration-200">
+        Learn More {ARROW}
+      </span>
     </motion.button>
   )
 }

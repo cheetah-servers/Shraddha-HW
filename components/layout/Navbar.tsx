@@ -5,10 +5,10 @@ import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const NAV_LINKS = [
-  { label: 'Home', href: '/' },
-  { label: 'About', href: '/about' },
-  { label: 'Programs', href: '/#handwriting' },
-  { label: 'Gallery', href: '/gallery' },
+  { label: 'Home', href: '/#' },
+  { label: 'About', href: '/#about' },
+  { label: 'Programs', href: '/#programs' },
+  { label: 'Gallery', href: '/#gallery' },
   { label: 'Testimonials', href: '/#testimonials' },
   { label: 'Contact', href: '/#book' },
 ]
@@ -30,18 +30,23 @@ export default function Navbar() {
       }`}
       style={{ background: 'rgba(254,252,247,0.95)', backdropFilter: 'blur(16px)' }}
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-10 h-16 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2.5">
-          <Image src="/logo-icon.png" alt="Shraddha logo" width={46} height={49} className="h-[46px] w-auto" priority />
+      <div className="max-w-7xl mx-auto px-6 lg:px-10 h-20 flex items-center gap-0">
+        {/* Logo */}
+        <Link href="/" className="flex items-center gap-3 shrink-0">
+          <Image src="/logo-icon.png" alt="Shraddha logo" width={64} height={68} className="h-[68px] w-auto" priority />
           <span>
-            <span className="block font-display font-bold text-[21px] leading-none" style={{ color: '#0B2AC0', letterSpacing: '-0.4px' }}>Shraddha</span>
-            <span className="block text-[8px] tracking-[1.4px] uppercase font-semibold mt-1" style={{ color: '#0B2AC0' }}>
+            <span className="block font-display font-bold text-[27px] leading-none" style={{ color: '#0B2AC0', letterSpacing: '-0.4px' }}>Shraddha</span>
+            <span className="block text-[11px] font-normal mt-1" style={{ color: '#0B2AC0' }}>
               Good &amp; Neat Handwriting Institute
             </span>
           </span>
         </Link>
 
-        <ul className="hidden md:flex gap-7">
+        {/* Separator after logo */}
+        <div className="hidden md:block h-10 w-px bg-gold-pale mx-7 shrink-0" />
+
+        {/* Nav links — left aligned */}
+        <ul className="hidden md:flex gap-7 flex-1">
           {NAV_LINKS.map((l) => (
             <li key={l.label}>
               <Link href={l.href} className="text-muted hover:text-gold text-[13px] font-medium transition-colors">
@@ -51,9 +56,12 @@ export default function Navbar() {
           ))}
         </ul>
 
+        {/* Separator after menu items */}
+        <div className="hidden md:block h-10 w-px bg-gold-pale mx-7 shrink-0" />
+
         <Link
           href="/#book"
-          className="hidden md:flex items-center gap-1.5 bg-ink text-cream font-serif font-semibold text-[12px] px-5 py-2.5 rounded-md hover:bg-ink-deep transition-colors"
+          className="hidden md:flex items-center gap-1.5 bg-ink text-cream font-serif font-semibold text-[12px] px-5 py-2.5 rounded-md hover:bg-ink-deep transition-colors shrink-0"
         >
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="14" height="14" aria-hidden="true">
             <rect x="3" y="4" width="18" height="18" rx="2" />

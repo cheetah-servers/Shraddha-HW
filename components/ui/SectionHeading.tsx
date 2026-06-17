@@ -11,8 +11,8 @@ export default function SectionHeading({ eyebrow, title, sub, light }: SectionHe
   return (
     <FadeIn>
       <div className="text-center max-w-xl mx-auto mb-2">
-        <span className="font-script text-2xl text-gold block mb-0.5">{eyebrow}</span>
-        <h2 className={`font-display font-extrabold text-3xl leading-tight mb-2 ${light ? 'text-cream' : 'text-ink'}`}>
+        <span className="font-script text-3xl text-gold block mb-1" style={{ opacity: 1 }}>{eyebrow}</span>
+        <h2 className={`font-display font-semibold text-[28px] leading-tight mb-2 ${light ? 'text-cream' : 'text-ink'}`}>
           {title}
         </h2>
         <div className="flex items-center justify-center gap-2 my-3">

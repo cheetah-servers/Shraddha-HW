@@ -36,34 +36,49 @@ const INFO = [
 
 export default function BookingSection() {
   return (
-    <section id="book" className="py-16 px-6 lg:px-10 bg-cream scroll-mt-20">
-      <SectionHeading eyebrow="get started" title="Book Your Free Demo Class" />
+    <section id="book" className="relative overflow-hidden py-20 px-6 lg:px-10 bg-cream scroll-mt-20">
+      {/* Brand Ruled Paper background texture */}
+      <div className="absolute inset-0 ruled-bg opacity-35 pointer-events-none" />
 
-      <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-start mt-8">
-        {/* Info */}
-        <div>
-          <h3 className="font-display font-extrabold text-2xl text-ink mb-2">We&apos;re Here to Help</h3>
-          <p className="text-muted text-sm mb-7 leading-relaxed">
-            Reach out for any questions about our handwriting and calligraphy programs, batches, or fees — or
-            just fill in the form and we&apos;ll call you back within 24 hours.
-          </p>
-          <div className="flex flex-col gap-5 mb-2">
-            {INFO.map((item) => (
-              <div key={item.label} className="flex items-start gap-4">
-                <div className="w-11 h-11 bg-gold-pale text-gold rounded-xl flex items-center justify-center flex-shrink-0">
-                  {item.icon}
+      {/* Decorative Soft Ambient Glow Orbs */}
+      <div 
+        className="absolute -top-20 -right-20 w-[300px] h-[300px] rounded-full bg-gold/10 pointer-events-none"
+        style={{ filter: 'blur(80px)' }}
+      />
+      <div 
+        className="absolute -bottom-20 -left-20 w-[250px] h-[250px] rounded-full bg-ink/5 pointer-events-none"
+        style={{ filter: 'blur(70px)' }}
+      />
+
+      <div className="relative z-10">
+        <SectionHeading eyebrow="get started" title="Book Your Free Demo Class" />
+
+        <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mt-10">
+          {/* Info */}
+          <div className="lg:pr-6">
+            <h3 className="font-display font-semibold text-2xl text-ink mb-3 tracking-tight">We&apos;re Here to Help</h3>
+            <p className="text-muted text-sm mb-8 leading-relaxed max-w-md">
+              Reach out for any questions about our handwriting and calligraphy programs, batches, or fees — or
+              just fill in the form and we&apos;ll call you back within 24 hours.
+            </p>
+            <div className="flex flex-col gap-6">
+              {INFO.map((item) => (
+                <div key={item.label} className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-white text-gold rounded-2xl flex items-center justify-center flex-shrink-0 shadow-sm border border-gold-pale/50 transition-all duration-300 hover:scale-105">
+                    {item.icon}
+                  </div>
+                  <div>
+                    <div className="font-serif font-bold text-sm text-ink mb-0.5">{item.label}</div>
+                    <div className="text-ink font-medium text-sm leading-relaxed max-w-sm">{item.value}</div>
+                  </div>
                 </div>
-                <div>
-                  <div className="font-serif font-bold text-sm text-ink mb-0.5">{item.label}</div>
-                  <div className="text-muted text-sm">{item.value}</div>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
 
-        {/* Form */}
-        <BookingForm />
+          {/* Form */}
+          <BookingForm />
+        </div>
       </div>
     </section>
   )

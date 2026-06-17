@@ -22,16 +22,19 @@ export default function WhyChooseUs() {
   return (
     <section className="py-16 px-6 lg:px-10 bg-cream">
       <SectionHeading eyebrow="why choose us" title="Crafted For Real Improvement" />
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto mt-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto mt-8">
         {FEATURES.map((f, i) => (
           <FadeIn key={f.t} delay={i * 0.06}>
-            <FeatureCard className="h-full">
-              <div className="flex flex-col gap-3">
-                <div className="w-12 h-12 rounded-xl bg-gold-pale text-gold flex items-center justify-center">
+            <FeatureCard className="h-full bg-white transition-all duration-300 border border-gold-pale hover:border-gold/50">
+              <div className="flex flex-col gap-4">
+                <div className="w-12 h-12 rounded-xl bg-gold-pale text-gold flex items-center justify-center transition-all duration-300 group-hover:bg-gold group-hover:text-white group-hover:scale-110 group-hover:rotate-3">
                   {f.i}
                 </div>
-                <h3 className="font-display font-bold text-base text-ink">{f.t}</h3>
-                <p className="text-muted text-[13px] leading-relaxed">{f.d}</p>
+                <div>
+                  <h3 className="font-display font-bold text-[16px] text-ink mb-1.5">{f.t}</h3>
+                  <span className="block w-6 h-[2px] bg-gold/30 group-hover:w-12 transition-all duration-300" />
+                </div>
+                <p className="text-muted text-[13px] leading-relaxed mt-0.5">{f.d}</p>
               </div>
             </FeatureCard>
           </FadeIn>

@@ -5,7 +5,7 @@ import { TravelCard } from '@/components/ui/card-7'
 
 function HandwritingIcon() {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="#0B2AC0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="26" height="26" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="none" stroke="#0B2AC0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="30" height="30" aria-hidden="true">
       <path d="M12 20h9" />
       <path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z" />
     </svg>
@@ -14,7 +14,7 @@ function HandwritingIcon() {
 
 function CalligraphyIcon() {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="#E0A407" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="26" height="26" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="none" stroke="#E0A407" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="30" height="30" aria-hidden="true">
       <path d="M18.37 2.63 14 7l-1.59-1.59a2 2 0 0 0-2.82 0L8 7l9 9 1.59-1.59a2 2 0 0 0 0-2.82L17 10l4.37-4.37a2.12 2.12 0 1 0-3-3Z" />
       <path d="M9 8c-2 3-4 3.5-7 4l8 10c2-1 6-5 6-7" />
       <path d="M14.5 17.5 4.5 15" />
@@ -27,7 +27,7 @@ export default function Pillars() {
     document.getElementById(id)?.scrollIntoView({ behavior: 'instant' as ScrollBehavior })
 
   return (
-    <section className="py-16 px-6 lg:px-10 bg-cream">
+    <section id="about" className="py-16 px-6 lg:px-10 bg-cream scroll-mt-20">
       <SectionHeading
         eyebrow="two paths, one craft"
         title="Choose Your Writing Journey"
