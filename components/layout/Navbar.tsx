@@ -30,13 +30,13 @@ export default function Navbar() {
       }`}
       style={{ background: 'rgba(254,252,247,0.95)', backdropFilter: 'blur(16px)' }}
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-10 h-20 flex items-center gap-0">
+      <div className="max-w-7xl mx-auto px-6 lg:px-10 h-20 flex items-center justify-between md:justify-start gap-0">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-3 shrink-0">
-          <Image src="/logo-icon.png" alt="Shraddha logo" width={64} height={68} className="h-[68px] w-auto" priority />
-          <span>
-            <span className="block font-display font-bold text-[27px] leading-none" style={{ color: '#0B2AC0', letterSpacing: '-0.4px' }}>Shraddha</span>
-            <span className="block text-[11px] font-normal mt-1" style={{ color: '#0B2AC0' }}>
+        <Link href="/" className="flex items-center gap-2 md:gap-3 shrink-0">
+          <Image src="/logo-icon.png" alt="Shraddha logo" width={64} height={68} className="h-[52px] md:h-[68px] w-auto animate-fade-in" priority />
+          <span className="flex flex-col justify-center">
+            <span className="block font-display font-bold text-[19px] md:text-[27px] leading-none text-ink" style={{ letterSpacing: '-0.4px' }}>Shraddha</span>
+            <span className="block text-[8px] md:text-[11px] font-normal mt-1 text-ink/85">
               Good &amp; Neat Handwriting Institute
             </span>
           </span>
@@ -72,31 +72,44 @@ export default function Navbar() {
           Book Free Demo
         </Link>
 
-        <button onClick={() => setOpen(!open)} className="md:hidden p-2 flex flex-col gap-1.5" aria-label="Toggle menu">
-          <span className={`block w-5 h-0.5 bg-ink transition-all ${open ? 'rotate-45 translate-y-2' : ''}`} />
-          <span className={`block w-5 h-0.5 bg-ink transition-all ${open ? 'opacity-0' : ''}`} />
-          <span className={`block w-5 h-0.5 bg-ink transition-all ${open ? '-rotate-45 -translate-y-2' : ''}`} />
+        {/* Animated Hamburger menu toggle */}
+        <button 
+          onClick={() => setOpen(!open)} 
+          className="md:hidden w-10 h-10 flex items-center justify-center relative border border-gold-pale/50 rounded-xl focus:outline-none bg-white shadow-sm"
+          aria-label="Toggle menu"
+        >
+          <div className="w-5 h-4 flex flex-col justify-between relative">
+            <span className={`block w-5 h-0.5 bg-ink rounded transition-all duration-300 origin-left ${open ? 'rotate-45 translate-x-[3px] -translate-y-[1px]' : ''}`} />
+            <span className={`block w-5 h-0.5 bg-ink rounded transition-all duration-300 ${open ? 'opacity-0 scale-0' : ''}`} />
+            <span className={`block w-5 h-0.5 bg-ink rounded transition-all duration-300 origin-left ${open ? '-rotate-45 translate-x-[3px] translate-y-[1px]' : ''}`} />
+          </div>
         </button>
       </div>
 
       <AnimatePresence>
         {open && (
           <motion.div
-            initial={{ height: 0 }}
-            animate={{ height: 'auto' }}
-            exit={{ height: 0 }}
-            className="md:hidden overflow-hidden bg-paper border-t border-gold-pale"
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.2, ease: 'easeInOut' }}
+            className="md:hidden overflow-hidden bg-paper border-t border-gold-pale/50"
           >
-            <div className="px-6 py-4 flex flex-col gap-4">
+            <div className="px-6 py-5 flex flex-col gap-3.5">
               {NAV_LINKS.map((l) => (
-                <Link key={l.label} href={l.href} onClick={() => setOpen(false)} className="text-muted text-sm font-medium">
+                <Link 
+                  key={l.label} 
+                  href={l.href} 
+                  onClick={() => setOpen(false)} 
+                  className="text-muted hover:text-ink text-sm font-medium py-1.5 transition-colors border-b border-gold-pale/10 last:border-0"
+                >
                   {l.label}
                 </Link>
               ))}
               <Link
                 href="/#book"
                 onClick={() => setOpen(false)}
-                className="bg-ink text-cream font-serif font-semibold text-sm px-5 py-3 rounded-md text-center"
+                className="bg-ink text-cream font-serif font-semibold text-sm px-5 py-3 rounded-xl text-center shadow-md hover:bg-ink-deep transition-all mt-2"
               >
                 Book Free Demo
               </Link>
