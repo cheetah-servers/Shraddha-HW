@@ -29,11 +29,64 @@ export const metadata: Metadata = {
     title: 'Shraddha | Handwriting & Calligraphy',
     description: 'Master the art of beautiful writing — handwriting improvement and calligraphy for all ages.',
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+}
+
+const localBusinessJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  'name': 'Shraddha – Good & Neat Handwriting Institute',
+  'image': 'https://shraddha.edu.in/logo-full.png',
+  'url': 'https://shraddha.edu.in',
+  'telephone': '+918143444110, +919490937410',
+  'email': 'shraddhasri9@gmail.com',
+  'address': {
+    '@type': 'PostalAddress',
+    'streetAddress': '40-180, plot no.204, Jawaharnagar colony, ECIL extension',
+    'addressLocality': 'Hyderabad',
+    'addressRegion': 'Telangana',
+    'postalCode': '500040',
+    'addressCountry': 'IN'
+  },
+  'geo': {
+    '@type': 'GeoCoordinates',
+    'latitude': '17.4729',
+    'longitude': '78.5701'
+  },
+  'openingHoursSpecification': {
+    '@type': 'OpeningHoursSpecification',
+    'dayOfWeek': [
+      'Monday',
+      'Tuesday',
+      'Wednesday',
+      'Thursday',
+      'Friday',
+      'Saturday'
+    ],
+    'opens': '09:00',
+    'closes': '20:00'
+  }
 }
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
+        />
+      </head>
       <body>
         <Navbar />
         <main>{children}</main>

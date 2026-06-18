@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: 'About Us',
   description:
     'Shraddha has helped thousands of students transform their handwriting and learn calligraphy since 2014. Meet the academy behind beautiful writing.',
+  alternates: {
+    canonical: 'https://shraddha.edu.in/about',
+  },
 }
 
 export default function AboutPage() {

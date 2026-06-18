@@ -5,6 +5,9 @@ import BookingForm from '@/components/sections/BookingForm'
 export const metadata: Metadata = {
   title: 'Contact & Book a Demo',
   description: 'Contact Shraddha or book a free handwriting / calligraphy demo class in Hyderabad.',
+  alternates: {
+    canonical: 'https://shraddha.edu.in/contact',
+  },
 }
 
 const INFO = [

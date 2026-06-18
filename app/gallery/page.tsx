@@ -6,6 +6,9 @@ import { FeatureCard } from '@/components/ui/feature-card'
 export const metadata: Metadata = {
   title: 'Gallery',
   description: 'A gallery of handwriting transformations and calligraphy artwork created by students of Shraddha.',
+  alternates: {
+    canonical: 'https://shraddha.edu.in/gallery',
+  },
 }
 
 const PIECES = [

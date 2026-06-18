@@ -17,6 +17,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: `${program.name} | Shraddha`,
     description: program.overview,
     keywords: [program.name, `${program.category} classes`, 'Shraddha', 'Hyderabad'],
+    alternates: {
+      canonical: `https://shraddha.edu.in/programs/${slug}`,
+    },
   }
 }
 
@@ -30,8 +33,24 @@ export default async function ProgramPage({ params }: { params: Promise<{ slug: 
 
   const isCalli = program.category === 'calligraphy'
 
+  const courseJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Course',
+    'name': program.name,
+    'description': program.overview,
+    'provider': {
+      '@type': 'LocalBusiness',
+      'name': 'Shraddha – Good & Neat Handwriting Institute',
+      'sameAs': 'https://shraddha.edu.in'
+    }
+  }
+
   return (
     <div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(courseJsonLd) }}
+      />
       {/* Hero */}
       <section className="relative overflow-hidden py-20 px-6 lg:px-10 bg-ink">
         <div className="absolute inset-0 ruled-bg opacity-10 pointer-events-none" />

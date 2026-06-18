@@ -1,0 +1,37 @@
+# Shraddha – Good & Neat Handwriting Institute
+
+Shraddha Handwriting Institute is a premium, expert-led training academy specializing in professional handwriting improvement and custom calligraphy art, headquartered in Hyderabad, India.
+
+## Core Offerings
+
+### 1. Handwriting Improvement Programs
+- **Kids Handwriting:** Foundation for neat print writing (Ages 4-6). Focuses on pencil grip, posture, and line spacing.
+- **Legible & Neat Handwriting:** Comprehensive handwriting improvement in Cursive, Print, and Lucida styles for school children (8+).
+- **Adult Handwriting & Signature:** Polishes writing aesthetics, boosts efficiency, and guides signature styling for students and professionals.
+- **Speed & Exam Writing:** Increases writing speed without losing clarity, specifically designed for students facing exam time pressure.
+
+### 2. Calligraphy Programs & Services
+- **Modern Calligraphy:** Creative brush-pen lettering, bounce styling, and quote design.
+- **Classic & Nib Lettering:** Timeless traditional calligraphy using dip pens, pointed pens, and broad-nib scripts.
+- **Invitations & Lettering Art:** Custom, high-end lettering for event decor, place cards, and wedding invites.
+
+---
+
+## Contact Information
+- **Phone:** +91 8143444110, +91 9490937410
+- **Email:** shraddhasri9@gmail.com
+- **Address:** 40-180, plot no.204, Jawaharnagar colony, ECIL extension, Hyderabad 500040
+- **Founder / Head Instructor:** Shri Shraddha Srinivas Sir
+- **Website:** https://shraddha.edu.in
+
+---
+
+## Technical Project Structure (Next.js 15)
+
+- `app/layout.tsx`: Root layout importing standard font systems, layout wrappers, sitewide LocalBusiness JSON-LD schema, navigation navbar, and contact buttons.
+- `app/page.tsx`: Landing page highlighting stats, courses, before-after transformations, student reviews, and free demo signup hooks.
+- `app/about/page.tsx`: Academy's background story, credentials, metrics, and educational philosophies.
+- `app/contact/page.tsx`: Direct booking forms, address markers, telephone links, and Google Map redirects.
+- `app/gallery/page.tsx`: Curated interactive gallery of beautiful handwritten and calligraphic compositions.
+- `app/programs/[slug]/page.tsx`: Dynamic route matching single courses, rendering their unique overview, curriculum steps, and gain checklists, alongside rich Course JSON-LD schemas.
+- `lib/data.ts`: Central data repository for site content, course details, FAQ matrices, and parent testimonials.
